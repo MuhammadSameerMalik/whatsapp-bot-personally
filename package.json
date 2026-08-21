@@ -1,0 +1,31 @@
+{
+  "name": "once-view",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "check": "node --check index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^7.0.0-rc13",
+    "awesome-phonenumber": "^7.8.0",
+    "axios": "^1.18.1",
+    "chalk": "^4.1.2",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "file-type": "^22.0.1",
+    "libphonenumber-js": "^1.13.8",
+    "node-cache": "^5.1.2",
+    "pino": "^10.3.1"
+  }
+}
