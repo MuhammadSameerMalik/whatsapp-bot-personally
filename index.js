@@ -124,7 +124,66 @@ const TRIGGER_WORDS = new Set([
     '👌🏾', '👌🏿', '😜', '😝', '😛', '🥵', '😳', '😎', '🤩', '💋', '👀', '😏',
     '🤤', '😇', '🥳', '🙈', '💐', '🌹', '🌸', '👑', '🥺', '😅', '🫶', '💦', '💃',
     '🕺', '🤗', '😌', '🥹', '🤍', '🖤', '💛', '💚', '💙', '💜', '🧡', '💫', '🌈',
-    '🎉', '🎊', '🙊', '🙉', '🤭', '🥴', '😵', '🤯'
+    '🎉', '🎊', '🙊', '🙉', '🤭', '🥴', '😵', '🤯', '😡', '😠', '🤬', '😤', '😣',
+    '😖', '😫', '😩', '😢', '😭', '😓', '😥', '😰', '😨', '😱', '🤯', '😵‍💫', '😴',
+    '🥱', '🤤', '😪', '🤢', '🤮', '🤧', '😷', '🤒', '🤕', '🤑', '🤠', '😈', '👿',
+    '👹', '👺', '🤡', '💩', '👻', '💀', '☠️', '👽', '👾', '🤖', '🎃', '😺', '😸',
+    '😹', '😻', '😼', '😽', '🙀', '😿', '😾', '👋', '👋🏻', '👋🏼', '👋🏽', '👋🏾',
+    '👋🏿', '🤚', '🤚🏻', '🤚🏼', '🤚🏽', '🤚🏾', '🤚🏿', '🖐️', '🖐🏻', '🖐🏼', '🖐🏽', '🖐🏾',
+    '🏿', '✋', '✋🏻', '✋🏼', '✋🏽', '✋️', '✋️', '🖖', '🖖🏻', '🖖🏼', '🖖️', '🖖️',
+    '🖖️', '👌', '👌🏻', '👌🏼', '👌🏽', '👌🏾', '👌🏿', '🤌', '🤌🏻', '🤌🏼', '🤌🏽', '🤌🏾',
+    ' Mott', '🤏', '🤏🏻', '🤏🏼', '🤏🏻️', '🤏🏻️', '🤏🏻️', '✌️', '✌🏻', '✌🏼', '✌🏽', '✌🏾',
+    '✌🏿', '🤞', '🤞🏻', ' Cros', '🤞🏽', '🤞🏾', '🤞🏿', '🤟', '🤟🏻', '🤟🏼', '🤟️', '🤟️',
+    '🤟️', '🤘', '🤘🏻', '🤘🏼', '🤘🏽', '🤘🏾', '🤘🏿', '🤙', '🤙🏻', '🤙🏼', '🤙🏽', '🤙️',
+    '🤙️', '👈', '👈🏻', '👈🏼', '👈🏽', '👈🏾', '👈🏻', '👉', '👉🏻', '👉🏼', '👉🏽', '👉🏾',
+    '👉🏿', '👆', '👆🏻', '👆🏼', '👆🏽', '👆🏾', '👆️', '🖕', '🖕🏻', '🖕🏼', '🖕️', '🖕️',
+    '🖕️', '👇', '👇🏻', '👇🏼', '👇🏽', '👇🏾', '👇️', '☝️', '☝🏻', '☝🏼', '☝🏽', '☝🏾',
+    '☝️️', '👍', '👍🏻', '👍🏼', '👍🏽', '👍🏾', '👍🏿', '👎', '👎🏻', '👎🏼', '👎️', '👎️',
+    '👎️', '✊', '✊🏻', '✊🏼', '✊️', '✊️', '✊️', '👊', '👊🏻', '👊🏼', '👊️', '👊️',
+    '👊️', '🤛', '🤛🏻', '🤛🏼', '🤛️', '🤛️', '🤛️', '🤜', '🤜🏻', '🤜🏼', '🤜️', '🤜️',
+    '🤜️', '👏', '👏🏻', '👏🏼', '👏🏽', '👏🏾', '👏🏿', '🙌', '🙌🏻', '🙌🏼', '🙌🏽', '🙌🏾',
+    '🙌🏿', '👐', '👐🏻', '👐🏼', '👐🏽', '👐🏾', '👐🏿', '🤲', '🤲🏻', '🤲🏼', '🤲🏽', '🤲️',
+    '🤲️', '🤝', '🙏', '🙏🏻', '🙏🏼', '🙏🏽', '🙏🏾', '🙏🏿', '✍️', '✍🏻', '✍🏼', '✍️️',
+    '✍️️', '✍️️', '💅', '💅🏻', '💅🏼', '💅️', '💅️', '💅️', '🤳', '💃', '💃🏻', '💃🏼',
+    '💃️', '💃️', '💃️', '🕺', '🕺🏻', '🕺🏼', '🕺️', '🕺️', '🕺️', '🕴️', '🚶', '🚶‍♂️',
+    '🚶‍♀️', '🧍', '🧍‍♂️', '🧍‍♀️', '🧎', '🧎‍♂️', '🧎‍♀️', '🏃', '🏃‍♂️', '🏃‍♀️',
+    '👯', '👯‍♂️', '👯‍♀️', '🧖', '🧖‍♂️', '🧖‍♀️', '🧗', '🧗‍♂️', '🧗‍♀️', '🤺',
+    '🏇', '⛷️', '🏂', '🏌️', '🏌️‍♂️', '🏌️‍♀️', '🏄', '🏄‍♂️', '🏄‍♀️', '🚣',
+    '🚣‍♂️', '🚣‍♀️', '🏊', '🏊‍♂️', '🏊‍♀️', '⛹️', '⛹️‍♂️', '⛹️‍♀️', '🏋️',
+    '🏋️‍♂️', '🏋️‍♀️', '🚴', '🚴‍♂️', '🚴‍♀️', '🚵', '🚵‍♂️', '🚵‍♀️', '🤸',
+    '🤸‍♂️', '🤸‍♀️', '🤼', '🤼‍♂️', '🤼‍♀️', '🤽', '🤽‍♂️', '🤽‍♀️', '🤾',
+    '🤾‍♂️', '🤾‍♀️', '🤹', '🤹‍♂️', '🤹‍♀️', '🧘', '🧘‍♂️', '🧘‍♀️', '🛀',
+    '🛌', '🧑‍🤝‍🧑', '👭', '👫', '👬', '💏', '💑', '👪', '👨‍👩‍👦', '👨‍👩‍👧', '👨‍👩‍👧‍👦',
+    '👨‍👩‍👦‍👦', '👨‍👩‍👧‍👧', '👩‍👩‍👦', '👩‍👩‍👧', '👩‍👩‍👧‍👦', '👩‍👩‍👦‍👦', '👩‍👩‍👧‍👧', '👨‍👨‍👦',
+    '👨‍👨‍👧', '👨‍👨‍👧‍👦', '👨‍👨‍👦‍👦', '👨‍👨‍👧‍👧', '🐶', '🐱', '🐭', '🐹', '🐰', '🦊',
+    '🐻', '🐼', '🐨', '🐯', '🦁', '🐮', '🐷', '🐽', '🐸', '🐵', '🙈', '🙉', '🙊',
+    '🐒', '🐔', '🐧', '🐦', '🐤', '🐣', '🐥', '🦆', '🦅', '🦉', '🦇', '🐺', '🐗',
+    '🐴', '🦄', '🐝', '🐛', '🦋', '🐌', '🐞', '🐜', '🦟', '🦗', '🕷', '🕸', '🦂',
+    '🐢', '🐍', '🦎', '🦖', '🦕', '🐙', '🦑', '🦐', '🦞', '🦀', '🐡', '🐠', '🐟',
+    '🐬', '🐳', '🐋', '🦈', '🐊', '🐅', '🐆', '🦓', '🦍', '🦧', '🐘', '🦛', '🦏',
+    '🐪', '🐫', '🦒', '🦘', '🐃', '🐂', '🐄', '🐎', '🐖', '🐏', '🐑', '🦙', '🐐',
+    '🦌', '🐕', '🐩', '🦮', '🐕‍🦺', '🐈', '🐈‍⬛', '🐓', '🦃', '🦚', '🦜', '🦢',
+    '🦩', '🕊', '🐇', '🦝', '🦨', '🦡', '🦦', '🦥', '🐁', '🐀', '🐿', '🦔', '🐾',
+    '🐉', '🐲', '🌵', '🎄', '🌲', '🌳', '🌴', '🌱', '🌿', '☘️', '🍀', '🎍', '🎋',
+    '🍃', '🍂', '🍁', '🍄', '🐚', '🌾', '💐', '🌷', '🌹', '🥀', '🌺', '🌸', '🌼',
+    '🌻', '🌞', '🌝', '🌛', '🌜', '🌚', '🌕', '🌖', '🌗', '🌘', '🌑', '🌒', '🌓',
+    '🌔', '🌙', '🌎', '🌍', '🌏', '💫', '⭐️', '🌟', '✨', '⚡', '☄️', '💥', '🔥',
+    '🌪', '🌈', '☀️', '🌤', '⛅️', '🌥', '☁️', '🌦', '🌧', '⛈', '🌩', '🌨', '❄️',
+    '☃️', '⛄', '🌬', '💨', '💧', '💦', '☔', '☂️', '🌊', '🌫', '🍏', '🍎', '🍐',
+    '🍊', '🍋', '🍌', '🍉', '🍇', '🍓', '🍈', '🍒', '🍑', '🥭', '🍍', '🥥', '🥝',
+    '🍅', '🍆', '🥑', '🥦', '🥬', '🥒', '🌶', '🌽', '🥕', '🥔', '🍠', '🥐', '🥯',
+    '🍞', '🥖', '🥨', '🧀', '🥚', '🍳', '🥞', '🥓', '🥩', '🍗', '🍖', '🦴', '🌭',
+    '🍔', '🍟', '🍕', '🥪', '🥙', '🌮', '🌯', '🥗', '🥘', '🥫', '🍝', '🍜', '🍲',
+    '🍛', '🍣', '🍱', '🥟', '🍤', '🍙', '🍚', '🍘', '🍥', '🥠', '🥮', '🍢', '🍡',
+    '🍧', '🍨', '🍦', '🥧', '🧁', '🍰', '🎂', '🍮', '🍭', '🍬', '🍫', '🍿', '🍩',
+    '🍪', '🌰', '🥜', '🍯', '🥛', '🍼', '☕️', '🍵', '🧃', '🥤', '🍶', '🍺', '🍻',
+    '🥂', '🍷', '🥃', '🍸', '🍹', '🧉', '🍾', '🥄', '🍴', '🍽', '🥣', '🥡', '🥢',
+    '🧂', '⚽', '🏀', '🏈', '⚾', '🥎', '🎾', '🏐', '🏉', '🥏', '🎱', '🪀', '🏓',
+    '🏸', '🏒', '🏑', '🥍', '🏏', '🥅', '⛳', '🪁', '🏹', '🎣', '🤿', '🥊', '🥋',
+    '🎽', '🛹', '🛷', '⛸', '🥌', '🎿', '⛷️', '🏂', '🪂', '🏆', '🥇', '🥈', '🥉',
+    '🏅', '🎖', '🏵', '🎗', '🎫', '🎟', '🎪', '🎭', '🩰', '🎨', '🎬', '🎤', '🎧',
+    '🎼', '🎹', '🥁', '🎷', '🎺', '🎸', '🪕', '🎻', '🎲', '♟', '🎯', '🎳', '🎮',
+    '🎰', '🧩'
 ])
 
 // ---------------------------------------------------------------------------
@@ -240,6 +299,228 @@ function deleteStatusMediaFile(filePath) {
         if (fs.existsSync(filePath)) fs.unlinkSync(filePath)
     } catch (error) {
         console.error('Failed to delete status media file:', error)
+    }
+}
+
+// ---------------------------------------------------------------------------
+// 🗑️ Antidelete — INBOX ONLY (group deletions are always ignored)
+//
+// FIX: every stored entry and every media file is now scoped to the
+// session that received it, so paired sessions can no longer see or
+// overwrite each other's deleted-message data (privacy leak fix).
+// ---------------------------------------------------------------------------
+const ANTIDELETE_CONFIG_PATH = path.join(DATA_DIR, 'antidelete.json')
+const ANTIDELETE_MEDIA_DIR = path.join(DATA_DIR, 'antidelete-media')
+// key is now `${sessionId}:${messageId}` -> { content, mediaType, filePath, sender, chatId, timestamp }
+const antideleteMessageStore = new Map()
+
+function antideleteStoreKey(sessionId, messageId) {
+    return `${sessionId}:${messageId}`
+}
+
+function ensureAntideleteMediaDir(sessionId) {
+    const dir = sessionId
+        ? path.join(ANTIDELETE_MEDIA_DIR, sessionId)
+        : ANTIDELETE_MEDIA_DIR
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
+    return dir
+}
+
+// Default is ENABLED (auto-on) unless the owner has explicitly turned it off
+// with `!antidelete off`. Scope is always inbox-only — group chats never
+// trigger antidelete storage or reports, regardless of this setting.
+function loadAntideleteConfig() {
+    try {
+        if (!fs.existsSync(ANTIDELETE_CONFIG_PATH)) return { enabled: true }
+        const raw = fs.readFileSync(ANTIDELETE_CONFIG_PATH, 'utf8')
+        if (!raw.trim()) return { enabled: true }
+        const parsed = JSON.parse(raw)
+        return { enabled: parsed.enabled !== false }
+    } catch {
+        return { enabled: true }
+    }
+}
+
+function saveAntideleteConfig(config) {
+    try {
+        ensureDirectories()
+        fs.writeFileSync(ANTIDELETE_CONFIG_PATH, JSON.stringify(config, null, 2))
+    } catch (error) {
+        console.error('Failed to save antidelete config:', error)
+    }
+}
+
+function getFolderSizeInMB(folderPath) {
+    try {
+        if (!fs.existsSync(folderPath)) return 0
+        const files = fs.readdirSync(folderPath)
+        let totalSize = 0
+        for (const file of files) {
+            const filePath = path.join(folderPath, file)
+            if (fs.statSync(filePath).isFile()) totalSize += fs.statSync(filePath).size
+        }
+        return totalSize / (1024 * 1024)
+    } catch (err) {
+        console.error('Error getting folder size:', err)
+        return 0
+    }
+}
+
+function cleanFolderIfLarge(folderPath, limitMB) {
+    try {
+        if (getFolderSizeInMB(folderPath) <= limitMB) return
+        const files = fs.readdirSync(folderPath)
+        for (const file of files) {
+            try { fs.unlinkSync(path.join(folderPath, file)) } catch {}
+        }
+    } catch (err) {
+        console.error('Antidelete media cleanup error:', err)
+    }
+}
+
+// Stores every INBOX (non-group, non-status) message the antidelete cache
+// might need to recover later if it gets deleted. Text, image, video,
+// sticker and voice/audio are all supported. Messages sent by the bot's own
+// number (fromMe) are skipped — nothing to "recover" for our own sends.
+//
+// FIX: sessionId is now required and used both as the in-memory Map key
+// prefix and as the on-disk media subfolder, so paired sessions can never
+// read or clobber each other's stored data.
+async function storeMessageForAntidelete(message, sessionId) {
+    try {
+        const config = loadAntideleteConfig()
+        if (!config.enabled) return
+        if (message.key?.fromMe) return
+        if (!sessionId) {
+            console.error('storeMessageForAntidelete: missing sessionId, refusing to store (would leak across sessions)')
+            return
+        }
+
+        const chatId = message.key?.remoteJid
+        if (!chatId || !message.key?.id) return
+        if (chatId.endsWith('@g.us') || chatId === 'status@broadcast') return // groups & status ignored
+
+        const messageId = message.key.id
+        const storeKey = antideleteStoreKey(sessionId, messageId)
+        const sender = message.key.participant || message.key.remoteJid
+        const content = extractText(message.message)
+        const mediaInfo = getMediaInfo(message.message)
+
+        let mediaType = ''
+        let filePath = ''
+
+        if (mediaInfo.media && ['image', 'video', 'sticker', 'audio'].includes(mediaInfo.type)) {
+            const buffer = await downloadMessageMedia(message)
+            if (buffer) {
+                const sessionMediaDir = ensureAntideleteMediaDir(sessionId)
+                let ext
+                if (mediaInfo.type === 'sticker') ext = 'webp'
+                else if (mediaInfo.type === 'audio') ext = (mediaInfo.media.mimetype || '').includes('ogg') ? 'ogg' : 'mp3'
+                else ext = extensionForMimetype(mediaInfo.media.mimetype, mediaInfo.type)
+                filePath = path.join(sessionMediaDir, `${messageId}.${ext}`)
+                fs.writeFileSync(filePath, buffer)
+                mediaType = mediaInfo.type
+            } else {
+                // Media never got downloaded — this is why the recovery report
+                // for this message will show "no media", even though the
+                // deletion itself was detected correctly.
+                console.error(`[${sessionId}] antidelete: media download FAILED for message ${messageId} (type=${mediaInfo.type})`)
+            }
+        }
+
+        if (!content && !mediaType) return
+
+        antideleteMessageStore.set(storeKey, {
+            content, mediaType, filePath, sender, chatId, timestamp: new Date().toISOString(),
+        })
+    } catch (error) {
+        console.error('storeMessageForAntidelete error:', error)
+    }
+}
+
+// Called when an inbox message gets deleted ("delete for everyone"). Sends
+// the recovered text/photo/video/sticker/voice to the session's own
+// self-chat. Groups are always ignored, even if antidelete is enabled.
+//
+// FIX: looks the message up by the same session-scoped key it was stored
+// with, so a paired session can only ever recover its own deleted messages
+// — never another paired number's.
+async function handleMessageRevocationForAntidelete(sock, revocationMessage, sessionId) {
+    try {
+        const config = loadAntideleteConfig()
+        if (!config.enabled) return
+        if (!sessionId) {
+            console.error('handleMessageRevocationForAntidelete: missing sessionId, refusing to look up (would leak across sessions)')
+            return
+        }
+
+        const chatId = revocationMessage.key?.remoteJid
+        if (!chatId) return
+        if (chatId.endsWith('@g.us') || chatId === 'status@broadcast') return
+
+        const messageId = revocationMessage.message?.protocolMessage?.key?.id
+        if (!messageId) return
+
+        const storeKey = antideleteStoreKey(sessionId, messageId)
+        const original = antideleteMessageStore.get(storeKey)
+        if (!original) return
+
+        const selfJid = getSessionSelfJid(sock)
+        if (!selfJid) return
+
+        const sender = original.sender
+        const senderNumber = normalizeNumber(String(sender).split('@')[0])
+
+        const time = new Date().toLocaleString('en-GB', {
+            timeZone: 'Asia/Karachi',
+            hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit',
+            day: '2-digit', month: '2-digit', year: 'numeric',
+        })
+
+        let text = `*🔰 ANTIDELETE REPORT (Inbox) 🔰*\n\n` +
+            `*👤 Sender:* @${senderNumber}\n` +
+            `*🕒 Time:* ${time}\n`
+
+        if (original.content) {
+            text += `\n*💬 Deleted Message:*\n${original.content}`
+        }
+
+        await sock.sendMessage(selfJid, { text, mentions: [sender] })
+
+        if (original.mediaType && original.filePath && fs.existsSync(original.filePath)) {
+            try {
+                const buffer = fs.readFileSync(original.filePath)
+                const caption = `*Deleted ${original.mediaType}*\nFrom: @${senderNumber}`
+                switch (original.mediaType) {
+                    case 'image':
+                        await sock.sendMessage(selfJid, { image: buffer, caption, mentions: [sender] })
+                        break
+                    case 'video':
+                        await sock.sendMessage(selfJid, { video: buffer, caption, mentions: [sender] })
+                        break
+                    case 'sticker':
+                        await sock.sendMessage(selfJid, { sticker: buffer, mentions: [sender] })
+                        break
+                    case 'audio':
+                        // Recovers voice notes (ptt) and normal audio messages
+                        await sock.sendMessage(selfJid, { audio: buffer, mimetype: 'audio/mpeg', ptt: false, caption, mentions: [sender] })
+                        break
+                }
+            } catch (err) {
+                await sock.sendMessage(selfJid, { text: `⚠️ Error sending recovered media: ${err.message}` })
+            }
+            try { fs.unlinkSync(original.filePath) } catch (err) { console.error('Antidelete media cleanup error:', err) }
+        } else if (original.mediaType) {
+            // We know media WAS attached to the deleted message, but we don't
+            // have a recovered file for it (download failed at store time).
+            await sock.sendMessage(selfJid, {
+                text: `⚠️ Is message ke sath ${original.mediaType} thi, lekin wo download nahi ho saki thi is liye recover nahi ho sakti.`
+            })
+        }
+
+        antideleteMessageStore.delete(storeKey)
+    } catch (error) {
+        console.error('handleMessageRevocationForAntidelete error:', error)
     }
 }
 
@@ -502,7 +783,7 @@ function normalizeNumber(value) {
 
 function parseCommand(text) {
     const normalized = String(text || '').trim()
-    const match = normalized.match(/^!(pair|unpair|pairlist|birthday|schedule|groups|group|scheduledlist|cancelschedule|status|statuslist|cancelstatus|statusaudience|deletestatus|postedstatuses|help)(?:\s+(.*))?$/i)
+    const match = normalized.match(/^!(pair|unpair|pairlist|birthday|schedule|groups|group|scheduledlist|cancelschedule|status|statuslist|cancelstatus|statusaudience|deletestatus|postedstatuses|antidelete|help)(?:\s+(.*))?$/i)
     if (!match) return null
     return {
         name: match[1].toLowerCase(),
@@ -707,6 +988,19 @@ async function handleCommands(sock, message) {
                     console.error('Failed removing session folder:', error)
                 }
 
+                // Also clean up this session's own antidelete media folder and
+                // any of its in-memory antidelete entries, so nothing lingers
+                // after unpair.
+                try {
+                    const sessionMediaDir = path.join(ANTIDELETE_MEDIA_DIR, sessionId)
+                    if (fs.existsSync(sessionMediaDir)) fs.rmSync(sessionMediaDir, { recursive: true, force: true })
+                } catch (error) {
+                    console.error('Failed removing session antidelete media folder:', error)
+                }
+                for (const key of [...antideleteMessageStore.keys()]) {
+                    if (key.startsWith(`${sessionId}:`)) antideleteMessageStore.delete(key)
+                }
+
                 pairedNumbers.delete(target)
                 savePairedNumbers()
                 await sock.sendMessage(chatId, { text: `✅ Number +${target} ko unpair kar diya gaya hai aur uska session band kar diya gaya hai.` })
@@ -739,6 +1033,19 @@ const WIZARD_TIMEOUT_MS = 2 * 60 * 1000
 
 const birthdayWizards = new Map()
 
+const SCHEDULE_MEDIA_DIR = path.join(DATA_DIR, 'schedule-media')
+function ensureScheduleMediaDir() {
+    if (!fs.existsSync(SCHEDULE_MEDIA_DIR)) fs.mkdirSync(SCHEDULE_MEDIA_DIR, { recursive: true })
+}
+function deleteScheduleMediaFile(filePath) {
+    if (!filePath) return
+    try {
+        if (fs.existsSync(filePath)) fs.unlinkSync(filePath)
+    } catch (error) {
+        console.error('Failed to delete schedule media file:', error)
+    }
+}
+
 function createScheduleEntry(sessionId, target, sendAtDate) {
     return {
         id: nextScheduleId(),
@@ -746,7 +1053,9 @@ function createScheduleEntry(sessionId, target, sendAtDate) {
         targetJid: target.jid,
         targetType: target.type,
         sendAt: sendAtDate.toISOString(),
-        message: null, // filled in by caller
+        message: null, // caption/text — filled in by caller
+        mediaType: null, // 'image' | 'video' | null (text-only)
+        filePath: null, // path to saved media file, if any
         sent: false,
         skipped: false,
     }
@@ -754,7 +1063,9 @@ function createScheduleEntry(sessionId, target, sendAtDate) {
 
 function formatScheduledConfirmation(entry) {
     const when = new Date(entry.sendAt).toLocaleString('en-GB', { timeZone: 'Asia/Karachi', dateStyle: 'medium', timeStyle: 'short' })
-    return `✅ Scheduled! (ID: ${entry.id})\n📅 ${when} (PKT) par ${entry.targetType === 'group' ? 'is group' : 'is number'} ko ye message chala jayega:\n\n"${entry.message}"`
+    const kind = entry.mediaType ? `${entry.mediaType} message` : 'text message'
+    const preview = entry.message ? `\n\n"${entry.message}"` : ''
+    return `✅ Scheduled! (ID: ${entry.id})\n📅 ${when} (PKT) par ${entry.targetType === 'group' ? 'is group' : 'is number'} ko ye ${kind} chala jayega:${preview}`
 }
 
 const BIRTHDAY_ONELINE_HELP = 'Format ghalat hai❌️\n' +
@@ -762,6 +1073,8 @@ const BIRTHDAY_ONELINE_HELP = 'Format ghalat hai❌️\n' +
     '(`!schedule` bhi bilkul isi tarah kaam karta hai — dono ek hi command hain)\n' +
     'Date: `today`/`aaj`, `tomorrow`/`kal`, `DD-MM`, ya `DD-MM-YYYY`\n' +
     'Time: `17:00` ya `5pm`\n\n' +
+    '📸 Photo/video bhejna ho to usi message ko caption ke tor par use karein\n' +
+    '(photo/video attach karein aur caption mein: `!birthday 923001234567 15-08 5pm Happy Birthday!`)\n\n' +
     'Ya sirf `!birthday` (ya `!schedule`) likhein apni self-chat mein — bot step-by-step pooch lega.\n' +
     'Group ke liye group JID use karein (!group ya !groups se lein).'
 
@@ -781,9 +1094,15 @@ const STATUS_ONELINE_HELP = 'Format ghalat hai❌️\n' +
 // ---------------------------------------------------------------------------
 
 const HELP_TEXT_SCHEDULING = '*📖 Commands Guide*\n\n' +
+    '*🗑️ Antidelete (Inbox Only)*\n' +
+    '`!antidelete on` / `!antidelete off` — enable/disable karein\n' +
+    '`!antidelete` (bina kuch likhe) — current status dekhein\n' +
+    'Sirf private chats (inbox) mein kaam karta hai — group deletions hamesha ignore hoti hain.\n' +
+    'Default khud-ba-khud ON hai. Text, photo, video, sticker aur voice/audio — sab recover ho kar aapki self-chat mein aa jate hain.\n\n' +
     '*📅 Messages (kisi number/group ko)*\n' +
     '`!birthday <number> <date> <time> <message>` — message schedule karein\n' +
     '  Example: `!birthday 923001234567 15-08 5pm Happy Birthday! 🎉`\n' +
+    '  Photo/video bhi bhej saktay hain — media attach karein, caption mein wahi command likhein\n' +
     '`!schedule` — `!birthday` jaisa hi hai, dono same kaam karte hain\n' +
     '`!birthday` (bina kuch likhe) — apni self-chat mein step-by-step wizard\n' +
     '`!scheduledlist` — pending scheduled messages dekhein\n' +
@@ -820,7 +1139,7 @@ function selfChatOnlyMessage(commandHint, onelineHint) {
         `Ya phir yahin one-line form use karein:\n${onelineHint}`
 }
 
-async function handleBirthdayWizardStep(sock, chatId, wizardKey, text) {
+async function handleBirthdayWizardStep(sock, message, chatId, wizardKey, text) {
     const state = birthdayWizards.get(wizardKey)
     if (!state) return
 
@@ -856,17 +1175,47 @@ async function handleBirthdayWizardStep(sock, chatId, wizardKey, text) {
         state.sendAtDate = sendAtDate
         state.step = 'message'
         state.lastPromptAt = Date.now()
-        return await sock.sendMessage(chatId, { text: 'Message likhein:' })
+        return await sock.sendMessage(chatId, { text: 'Message likhein (ya photo/video bhejein, caption ke sath ya bagair):' })
     }
 
     if (state.step === 'message') {
-        const scheduledMessage = text.trim()
-        if (!scheduledMessage) {
+        const mediaInfo = getMediaInfo(message.message)
+        const caption = text.trim()
+
+        // Photo/video attached — schedule it as a media message.
+        if (mediaInfo.media && (mediaInfo.type === 'image' || mediaInfo.type === 'video')) {
+            const buffer = await downloadMessageMedia(message)
+            if (!buffer) {
+                state.lastPromptAt = Date.now()
+                return await sock.sendMessage(chatId, { text: '⚠️ Media download nahi ho saki. Dubara bhejein.' })
+            }
+            ensureScheduleMediaDir()
+            const entry = createScheduleEntry(wizardKey.split(':')[0], state.target, state.sendAtDate)
+            const ext = extensionForMimetype(mediaInfo.media.mimetype, mediaInfo.type)
+            const filePath = path.join(SCHEDULE_MEDIA_DIR, `${entry.id}.${ext}`)
+            try {
+                fs.writeFileSync(filePath, buffer)
+            } catch (error) {
+                console.error('Failed to save schedule media:', error)
+                state.lastPromptAt = Date.now()
+                return await sock.sendMessage(chatId, { text: '⚠️ Media save nahi ho saki. Dubara try karein.' })
+            }
+            entry.mediaType = mediaInfo.type
+            entry.filePath = filePath
+            entry.message = caption
+            scheduledMessages.push(entry)
+            saveScheduledMessages()
+            birthdayWizards.delete(wizardKey)
+            return await sock.sendMessage(chatId, { text: formatScheduledConfirmation(entry) })
+        }
+
+        // Text-only path
+        if (!caption) {
             state.lastPromptAt = Date.now()
-            return await sock.sendMessage(chatId, { text: '❌ Message khali nahi ho sakta. Dubara likhein:' })
+            return await sock.sendMessage(chatId, { text: '❌ Message khali nahi ho sakta. Dubara likhein (ya photo/video bhejein):' })
         }
         const entry = createScheduleEntry(wizardKey.split(':')[0], state.target, state.sendAtDate)
-        entry.message = scheduledMessage
+        entry.message = caption
         scheduledMessages.push(entry)
         saveScheduledMessages()
         birthdayWizards.delete(wizardKey)
@@ -1061,9 +1410,10 @@ async function handleSchedulingCommands(sock, message, sessionId) {
         const wizardKey = `${sessionId}:${chatId}`
 
         if (birthdayWizards.has(wizardKey)) {
-            const looksLikeCommand = rawText.startsWith('!') && parseCommand(rawText) && rawText.toLowerCase() !== '!cancel'
+            const looksLikeCommand = !getMediaInfo(message.message).media
+                && rawText.startsWith('!') && parseCommand(rawText) && rawText.toLowerCase() !== '!cancel'
             if (!looksLikeCommand) {
-                await handleBirthdayWizardStep(sock, chatId, wizardKey, rawText)
+                await handleBirthdayWizardStep(sock, message, chatId, wizardKey, rawText)
                 return
             }
             birthdayWizards.delete(wizardKey) // user moved on to a new command
@@ -1103,16 +1453,15 @@ async function handleSchedulingCommands(sock, message, sessionId) {
             }
 
             // One-line form: !birthday|!schedule <number_or_groupID> <date> <time> <message...>
+            // A photo/video can be attached with this text as its caption —
+            // message text becomes optional in that case.
             const parts = command.arg.split(/\s+/)
-            if (parts.length < 4) {
+            if (parts.length < 3) {
                 return await sock.sendMessage(chatId, { text: BIRTHDAY_ONELINE_HELP })
             }
 
             const [targetRaw, dateStr, timeStr, ...msgParts] = parts
             const scheduledMessage = msgParts.join(' ').trim()
-            if (!scheduledMessage) {
-                return await sock.sendMessage(chatId, { text: '❌ Message likhna zaroori hai.' })
-            }
 
             const target = resolveTargetJid(targetRaw)
             if (!target) {
@@ -1126,6 +1475,29 @@ async function handleSchedulingCommands(sock, message, sessionId) {
 
             if (sendAtDate.getTime() <= Date.now()) {
                 return await sock.sendMessage(chatId, { text: '❌ Ye waqt guzar chuka hai. Aainda ka date/time dein.' })
+            }
+
+            const birthdayMediaInfo = getMediaInfo(message.message)
+            if (birthdayMediaInfo.media && (birthdayMediaInfo.type === 'image' || birthdayMediaInfo.type === 'video')) {
+                const buffer = await downloadMessageMedia(message)
+                if (!buffer) {
+                    return await sock.sendMessage(chatId, { text: '⚠️ Media download nahi ho saki. Dubara try karein.' })
+                }
+                ensureScheduleMediaDir()
+                const entry = createScheduleEntry(sessionId, target, sendAtDate)
+                const ext = extensionForMimetype(birthdayMediaInfo.media.mimetype, birthdayMediaInfo.type)
+                const filePath = path.join(SCHEDULE_MEDIA_DIR, `${entry.id}.${ext}`)
+                fs.writeFileSync(filePath, buffer)
+                entry.mediaType = birthdayMediaInfo.type
+                entry.filePath = filePath
+                entry.message = scheduledMessage
+                scheduledMessages.push(entry)
+                saveScheduledMessages()
+                return await sock.sendMessage(chatId, { text: formatScheduledConfirmation(entry) })
+            }
+
+            if (!scheduledMessage) {
+                return await sock.sendMessage(chatId, { text: '❌ Message likhna zaroori hai (ya photo/video attach karein).' })
             }
 
             const entry = createScheduleEntry(sessionId, target, sendAtDate)
@@ -1182,6 +1554,7 @@ async function handleSchedulingCommands(sock, message, sessionId) {
             if (index === -1) {
                 return await sock.sendMessage(chatId, { text: '⚠️ Ye ID nahi mili (ya pehle hi bhej di gayi hai).' })
             }
+            deleteScheduleMediaFile(scheduledMessages[index].filePath)
             scheduledMessages.splice(index, 1)
             saveScheduledMessages()
             await sock.sendMessage(chatId, { text: `✅ Schedule ${id} cancel kar diya gaya.` })
@@ -1261,6 +1634,29 @@ async function handleSchedulingCommands(sock, message, sessionId) {
             const list = jids.map((jid) => `+${jid.split('@')[0]}`).join('\n')
             await sock.sendMessage(chatId, {
                 text: `✅ Privacy set ho gayi — ab har NAYA status sirf inko dikhega:\n${list}\n\n⚠️ Ye sirf AAINDA (ab se banne wale) status par lagu hoga — pehle se lage hue status is se nahi badlenge.\nWapas sab ko dikhane ke liye:\n\`!statusaudience all\``
+            })
+
+        } else if (command.name === 'antidelete') {
+            const config = loadAntideleteConfig()
+            const arg = command.arg.trim().toLowerCase()
+
+            if (!arg) {
+                return await sock.sendMessage(chatId, {
+                    text: `*🗑️ ANTIDELETE SETUP*\n\nCurrent Status: ${config.enabled ? '✅ Enabled' : '❌ Disabled'}\n*Scope:* Sirf Inbox (private chats) — group deletions hamesha ignore hoti hain.\n*Default:* Khud-ba-khud ON hota hai.\n\n*.antidelete on* - Enable\n*.antidelete off* - Disable`
+                })
+            }
+
+            if (arg === 'on') {
+                config.enabled = true
+            } else if (arg === 'off') {
+                config.enabled = false
+            } else {
+                return await sock.sendMessage(chatId, { text: '❌ Invalid. `!antidelete on` ya `!antidelete off` likhein.' })
+            }
+
+            saveAntideleteConfig(config)
+            await sock.sendMessage(chatId, {
+                text: `✅ Antidelete ${arg === 'on' ? 'enabled' : 'disabled'} (sirf inbox ke liye — groups hamesha ignore).`
             })
 
         } else if (command.name === 'postedstatuses') {
@@ -1584,6 +1980,14 @@ async function startSession(sessionId, options) {
 
                 cacheViewOnceIfPresent(message, viewOnceCache)
 
+                const isRevocation = message.message?.protocolMessage?.type === 0
+                    || message.message?.protocolMessage?.type === 'REVOKE'
+                if (isRevocation) {
+                    await handleMessageRevocationForAntidelete(sock, message, sessionId)
+                } else {
+                    await storeMessageForAntidelete(message, sessionId)
+                }
+
                 const msgChatId = message.key?.remoteJid
                 if (msgChatId?.endsWith('@s.whatsapp.net')) {
                     addStatusRecipient(sessionId, sessionState, msgChatId)
@@ -1762,6 +2166,7 @@ async function checkScheduledMessages() {
             entry.sent = true
             entry.skipped = true
             changed = true
+            deleteScheduleMediaFile(entry.filePath)
             console.log(chalk.yellow(`🎂 [SCHEDULER] Skipped overdue message ${entry.id} (missed by ${Math.round(overdueMs / 60000)} min)`))
             continue
         }
@@ -1772,10 +2177,19 @@ async function checkScheduledMessages() {
         }
 
         try {
-            await sessionState.sock.sendMessage(entry.targetJid, { text: entry.message })
+            if (entry.mediaType && entry.filePath && fs.existsSync(entry.filePath)) {
+                const buffer = fs.readFileSync(entry.filePath)
+                const payload = entry.mediaType === 'video'
+                    ? { video: buffer, caption: entry.message || '' }
+                    : { image: buffer, caption: entry.message || '' }
+                await sessionState.sock.sendMessage(entry.targetJid, payload)
+            } else {
+                await sessionState.sock.sendMessage(entry.targetJid, { text: entry.message })
+            }
             entry.sent = true
             changed = true
-            console.log(chalk.green(`🎂 [SCHEDULER] Sent scheduled message ${entry.id} to ${entry.targetJid}`))
+            deleteScheduleMediaFile(entry.filePath)
+            console.log(chalk.green(`🎂 [SCHEDULER] Sent scheduled ${entry.mediaType || 'text'} message ${entry.id} to ${entry.targetJid}`))
         } catch (error) {
             console.error(`🎂 [SCHEDULER] Failed to send ${entry.id}:`, error?.message || error)
         }
@@ -1923,6 +2337,30 @@ safeInterval('watchdog', async () => {
 }, settings.watchdogInterval || 60 * 1000)
 
 safeInterval('autoclear', runAutoClear, AUTO_CLEAR_INTERVAL_MS)
+
+// FIX: cleanup now walks each SESSION's own antidelete-media subfolder and
+// applies the 200MB cap per-session, instead of treating the whole
+// antidelete-media directory as one shared pool. Previously a single busy
+// paired number could blow through the shared 200MB cap and wipe out other
+// sessions' not-yet-recovered media too.
+safeInterval('antidelete-cleanup', () => {
+    try {
+        if (!fs.existsSync(ANTIDELETE_MEDIA_DIR)) return
+        for (const entry of fs.readdirSync(ANTIDELETE_MEDIA_DIR)) {
+            const sessionMediaDir = path.join(ANTIDELETE_MEDIA_DIR, entry)
+            try {
+                if (fs.statSync(sessionMediaDir).isDirectory()) {
+                    cleanFolderIfLarge(sessionMediaDir, 200) // 200MB quota PER session
+                }
+            } catch (innerErr) {
+                console.error(`Antidelete cleanup error for ${entry}:`, innerErr)
+            }
+        }
+    } catch (err) {
+        console.error('Antidelete cleanup error:', err)
+    }
+}, 60 * 1000)
+
 safeInterval('scheduler', checkScheduledMessages, 30 * 1000)
 safeInterval('status-scheduler', checkScheduledStatuses, 30 * 1000)
 safeInterval('wizard-timeout', checkWizardTimeouts, 30 * 1000)
